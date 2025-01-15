@@ -1,8 +1,15 @@
-function updatemenu() {
-    if (document.getElementById('responsive-menu').checked == true) {
-      document.getElementById('menu').style.borderBottomRightRadius = '0';
-      document.getElementById('menu').style.borderBottomLeftRadius = '0';
-    }else{
-      document.getElementById('menu').style.borderRadius = '5px';
-    }
-  }
+// Toggle dropdown
+document.querySelectorAll('.dropdown').forEach(dropdown => {
+  dropdown.addEventListener('click', (e) => {
+      e.preventDefault();
+      dropdown.classList.toggle('active');
+  });
+});
+
+// Mobile menu toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const sidebar = document.getElementById('sidebar');
+
+menuToggle.addEventListener('click', () => {
+  sidebar.classList.toggle('active');
+});
