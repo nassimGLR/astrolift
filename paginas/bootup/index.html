@@ -11,5 +11,50 @@
 <body>
     <div include-html="/paginas/sidebar.html"></div>
     <!-- zet alles voor deze pagina hier onder -->
+    <div class="splash-container">
+        <div class="logo-container">
+            <img src="/images/image.png" alt="Astrolift Logo" class="logo">
+        </div>
+    </div>
+     <style>/* styles.css */
+        .splash-container {
+            position: fixed;
+            inset: 0;
+            background-color: rgb(15, 23, 42);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-container {
+            animation: fadeInOut 3s ease-in-out forwards;
+        }
+        
+        .logo {
+            width: 16rem;
+            height: 16rem;
+            object-fit: contain;
+        }
+        
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            40% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            80% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1.05);
+            }
+        }
+        </style>
+        <script src="/scripts/bootup.js"></script>
 </body>
 </html>
