@@ -1,10 +1,24 @@
 function initializeNavbar() {
   // Toggle dropdown
   document.querySelectorAll('.dropdown').forEach(dropdown => {
-      // Remove any existing event listeners
-      dropdown.removeEventListener('click', toggleDropdown);
-      // Add new event listener
-      dropdown.addEventListener('click', toggleDropdown);
+      const toggleButton = dropdown.querySelector('.nav-item');
+      
+      
+      
+      // Add new event listener to toggle button
+      toggleButton.addEventListener('click', (e) => {
+          e.preventDefault();
+          dropdown.classList.toggle('active');
+      });
+
+      // Add click event listener to dropdown items
+      const dropdownItems = dropdown.querySelectorAll('.dropdown-item');
+      dropdownItems.forEach(item => {
+          item.addEventListener('click', (e) => {
+              // Allow normal navigation for dropdown items
+              e.stopPropagation(); // Prevent the dropdown toggle from catching this click
+          });
+      });
   });
 
   // Mobile menu toggle
@@ -12,16 +26,18 @@ function initializeNavbar() {
   const sidebar = document.getElementById('sidebar');
   
   if (menuToggle && sidebar) {
-      // Remove any existing event listeners
       menuToggle.removeEventListener('click', toggleMenu);
-      // Add new event listener
       menuToggle.addEventListener('click', toggleMenu);
   }
-}
 
-function toggleDropdown(e) {
-  e.preventDefault();
-  this.classList.toggle('active');
+  // Close dropdown when clicking outside
+  document.addEventListener('click', (e) => {
+      if (!e.target.closest('.dropdown')) {
+          document.querySelectorAll('.dropdown').forEach(dropdown => {
+              dropdown.classList.remove('active');
+          });
+      }
+  });
 }
 
 function toggleMenu() {
@@ -29,5 +45,6 @@ function toggleMenu() {
   sidebar.classList.toggle('active');
 }
 
-// Initialize navbar when the script loads (for non-dynamically loaded content)
+// Initialize navbar when the script loads
 document.addEventListener('DOMContentLoaded', initializeNavbar);
+
