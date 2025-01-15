@@ -3,29 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie library</title>
-    <link rel="stylesheet" href="../../css/navbar.css">
-    <link rel="stylesheet" href="./../../css/films/films1.css">
-    <script src="./../../scripts/films/script1.js"></script>
+    <title>Your Page Title</title>
+    <link rel="stylesheet" href="/css/sidebar.css">
+    <script src="/scripts/include-html.js"></script>
+    <script src="/scripts/navbar.js"></script>
 </head>
 <body>
-    <div class="menu-toggle">☰</div>
-    <nav id="sidebar">
-        <div class="logo">
-            ✈️ Flight System
-        </div>
-        <a href="./paginas/flightprogression/index.html" class="nav-item">Flight Progression</a>
-        <a href="./paginas/food_menu/index.html" class="nav-item">Food Menu</a>
-        <div class="dropdown">
-            <a href="#" class="nav-item">Entertainment</a>
-            <div class="dropdown-content">
-                <a href="./paginas/films/filmlibrary.html" class="dropdown-item">Films</a>
-                <a href="./paginas/muziek/index.html" class="dropdown-item">Music</a>
-                <a href="./paginas/games/index.html" class="dropdown-item">Games</a>
-            </div>
-        </div>
-        <a href="./paginas/settings/index.html" class="nav-item">Settings</a>
-    </nav>
-    <script src="scripts/navbar.js"></script>
+    <div include-html="/paginas/sidebar.html"></div>
+    <!-- zet alles voor deze pagina hier onder -->
 </body>
 </html>
