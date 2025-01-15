@@ -4,25 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>home</title>
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/navbar.css">
-    <script src="./scripts/navbar.js"></script>
+    <link rel="stylesheet" href="css/navbar.css">
 </head>
 <body>
-    <nav id='menu'>
-        <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label>
-        <ul>
-          <li><a href='./paginas/flightprogression/index.html'>flightprogression</a></li>
-          <li><a href='./paginas/food_menu/index.html'>food menu</a></li>
-          <li><a class='dropdown-arrow' href='./paginas/films/filmlibrary.html'>entertainment</a>
-            <ul class='sub-menus'>
-              <li><a href='./paginas/films/filmlibrary.html'>films</a></li>
-              <li><a href='./paginas/muziek/index.html'>music</a></li>
-              <li><a href='./paginas/games/index.html'>games</a></li>
-            </ul>
-          </li>
-          <li><a href='./paginas/settings/index.html'>settings</a></li>
-        </ul>
-      </nav>
+    <div class="menu-toggle">☰</div>
+    <nav id="sidebar">
+        <div class="logo">
+            ✈️ Flight System
+        </div>
+        <a href="./paginas/flightprogression/index.html" class="nav-item">Flight Progression</a>
+        <a href="./paginas/food_menu/index.html" class="nav-item">Food Menu</a>
+        <div class="dropdown">
+            <a href="#" class="nav-item">Entertainment</a>
+            <div class="dropdown-content">
+                <a href="./paginas/films/filmlibrary.html" class="dropdown-item">Films</a>
+                <a href="./paginas/muziek/index.html" class="dropdown-item">Music</a>
+                <a href="./paginas/games/index.html" class="dropdown-item">Games</a>
+            </div>
+        </div>
+        <a href="./paginas/settings/index.html" class="nav-item">Settings</a>
+    </nav>
+
+    <script>
+        // Toggle dropdown
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+            dropdown.addEventListener('click', (e) => {
+                e.preventDefault();
+                dropdown.classList.toggle('active');
+            });
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const sidebar = document.getElementById('sidebar');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
