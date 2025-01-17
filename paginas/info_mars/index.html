@@ -10,6 +10,142 @@
 </head>
 <body>
     <div include-html="/paginas/sidebar.html"></div>
-    <!-- zet alles voor deze pagina hier onder -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mars Exploration</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: Arial, sans-serif;
+                color: #fff;
+                background: url('https://mars.nasa.gov/system/news_items/main_images/9464_PIA25681-FigureA-web.jpg') no-repeat center center fixed;
+                background-size: cover;
+            }
+    
+            .overlay {
+                background: rgba(0, 0, 0, 0.6);
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+    
+            .hero {
+                position: relative;
+                z-index: 2;
+                text-align: center;
+                padding: 50px 20px;
+            }
+    
+            .hero h1 {
+                font-size: 4rem;
+                margin-bottom: 10px;
+                letter-spacing: 3px;
+                text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+            }
+    
+            .hero p {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            }
+    
+            .grid-container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                padding: 20px;
+                max-width: 900px;
+                margin: 0 auto;
+                position: relative;
+                z-index: 2;
+            }
+    
+            .grid-item {
+                background: rgba(255, 255, 255, 0.1);
+                border: 2px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 20px;
+                text-align: center;
+                cursor: pointer;
+                transition: transform 0.3s ease, background 0.3s ease;
+            }
+    
+            .grid-item:hover {
+                transform: scale(1.05);
+                background: rgba(255, 255, 255, 0.2);
+            }
+    
+            .grid-item h3 {
+                font-size: 1.5rem;
+                margin-bottom: 10px;
+            }
+    
+            .grid-item p {
+                font-size: 1rem;
+            }
+    
+            footer {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                padding: 10px;
+                text-align: center;
+                background: rgba(0, 0, 0, 0.7);
+                z-index: 2;
+            }
+        </style>
+        <script>
+            function showRandomFact(item) {
+                const facts = [
+                    "Mars has the tallest volcano in the solar system, Olympus Mons.",
+                    "A day on Mars, called a sol, is just over 24 hours long.",
+                    "Mars has two small moons: Phobos and Deimos.",
+                    "The average temperature on Mars is about -80 degrees Fahrenheit (-60 degrees Celsius)."
+                ];
+    
+                const randomFact = facts[Math.floor(Math.random() * facts.length)];
+                item.querySelector('p').innerText = randomFact;
+            }
+        </script>
+    </head>
+    <body>
+        <div class="overlay"></div>
+    
+        <div class="hero">
+            <h1>Explore Mars</h1>
+            <p>The Red Planet Awaits</p>
+        </div>
+    
+        <div class="grid-container">
+            <div class="grid-item" onclick="showRandomFact(this)">
+                <h3>Fact 1</h3>
+                <p>Click to reveal a fact</p>
+            </div>
+            <div class="grid-item" onclick="showRandomFact(this)">
+                <h3>Fact 2</h3>
+                <p>Click to reveal a fact</p>
+            </div>
+            <div class="grid-item" onclick="showRandomFact(this)">
+                <h3>Fact 3</h3>
+                <p>Click to reveal a fact</p>
+            </div>
+            <div class="grid-item" onclick="showRandomFact(this)">
+                <h3>Fact 4</h3>
+                <p>Click to reveal a fact</p>
+            </div>
+        </div>
+    
+        <footer>
+        
+        </footer>
+    </body>
+    </html>
+    
 </body>
 </html>
