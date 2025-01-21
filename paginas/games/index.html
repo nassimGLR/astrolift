@@ -11,6 +11,42 @@
 <body>
     <div include-html="/paginas/sidebar.html"></div>
     <!--- zet alles hieronder voor html-->
+    <!DOCTYPE html>
+    <html lang="nl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Afbeelding Knoppen</title>
+        <link rel="stylesheet" href="favgame.css">
+    </head>
+    <body> 
     
+        <div class="container">
+            <div class="button-container">
+                <button class="image-button" onclick="redirectTo('https:en.wikipedia.org/wiki/Skylanders')">
+                    <img src="/images/skylander.jpg" alt="skylander">
+                </button>
+                <p class="title">The skylander series</p>
+            </div>
+    
+            <div class="button-container">
+                <button class="image-button" onclick="redirectTo('https:www.smashbros.com/nl_NL/')">
+                    <img src="/images/ssbu.jpg" alt="smash">
+                </button>
+                <p class="title">Super smash bros ultimate</p>
+            </div>
+    
+            <div class="button-container">
+                <button class="image-button" onclick="redirectTo('https:www.fortnite.com/?lang=en-US.com')">
+                    <img src="/images/fortnite.webp" alt="fortnite">
+                </button>
+                <p class="title">fortnite</p>
+            </div>
+        </div>
+    
+        <script src="favgame.js"></script>
+    </body>
+    </html>
+      
 </body>
 </html>
