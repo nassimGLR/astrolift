@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonic Jump Game</title>
+    <link rel="stylesheet" href="sonic.css">
+</head>
+<body>
+    <div class="start-screen">
+        <button>Start Game</button>
+    </div>
+    <div class="game hidden">
+        <div id="sonic">
+            <img src="sonic running.gif" alt="Sonic Running">
+        </div>
+        <div id="obstacle"></div>
+        <div class="score-board">Score: 0</div>
+    </div>
+    <div class="game-over-screen hidden">
+        <h1>Game Over</h1>
+        <p>Your score: <span id="final-score"></span></p>
+        <button id="restart-button">Restart</button>
+        <a id="back-button" class="back-button" href="/joey/sonic1/sonic.html">Back to Main Menu?</a> <!-- Link to another HTML page -->
+    </div>
+
+    <script src="sonic.js"></script>
+</body>
+</html>
+
