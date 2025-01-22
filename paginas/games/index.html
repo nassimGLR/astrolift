@@ -6,33 +6,35 @@
     <title>games</title>
     <script src="/scripts/include-html.js"></script>
     <script src="/scripts/navbar.js"></script>
+    <link rel="stylesheet" href="favgame.css">
 </head>
 <body>
     <div include-html="/paginas/sidebar.html"></div>
     <!--- zet alles hieronder voor html-->
     <div class="container">
         <div class="button-container">
-            <button class="image-button" onclick="redirectTo('https:en.wikipedia.org/wiki/Skylanders')">
-                <img src="/images/skylander.jpg" alt="skylander">
+            <button class="image-button" onclick="loadGame('games/skylander.html')">
+                <img src="/images/sonicrunners.png" alt="sonic">
             </button>
-            <p class="title">The skylander series</p>
+            <p class="title">Sonic runners</p>
         </div>
-
+    
         <div class="button-container">
-            <button class="image-button" onclick="redirectTo('https:www.smashbros.com/nl_NL/')">
+            <button class="image-button" onclick="loadGame('games/smash.html')">
                 <img src="/images/ssbu.jpg" alt="smash">
             </button>
-            <p class="title">Super smash bros ultimate</p>
+            <p class="title">Super Smash Bros Ultimate</p>
         </div>
-
+    
         <div class="button-container">
-            <button class="image-button" onclick="redirectTo('https:www.fortnite.com/?lang=en-US.com')">
+            <button class="image-button" onclick="loadGame('games/fortnite.html')">
                 <img src="/images/fortnite.webp" alt="fortnite">
             </button>
-            <p class="title">fortnite</p>
+            <p class="title">Fortnite</p>
         </div>
     </div>
-
+    
+    <iframe src="./index.html" frameborder="0"></iframe>
     <script src="favgame.js"></script>
 </body>
 </html>
