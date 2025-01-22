@@ -6,9 +6,56 @@
     <title>Food menu</title>
     <script src="/scripts/include-html.js"></script>
     <script src="/scripts/navbar.js"></script>
+    <link rel="stylesheet" href="./../../css/food_menu/food1.css">
 </head>
 <body>
     <div include-html="/paginas/sidebar.html"></div>
     <!-- zet alles voor deze pagina hier onder -->
+</head>
+<body>
+    <style>
+        body {
+            background-image: url("./../../images/food_menu/cafe.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover ;
+            z-index: 0;   
+            height: 100vh;        
+        }
+        
+    </style>
+    <div class="menu-container">
+        <h1>Food & Drinks</h1>
+        <div class="menu-section">
+            <h2>Food</h2>
+            <div class="menu-item">
+                <span class="item-name">Astronautenvoer</span>
+                <span class="item-price">$2.99</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Broodje Unox</span>
+                <span class="item-price">$7.99</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Snickers</span>
+                <span class="item-price">$1.50</span>
+            </div>
+        </div>
+        <div class="menu-section">
+            <h2>Drinks</h2>
+            <div class="menu-item">
+                <span class="item-name">Cola</span>
+                <span class="item-price">$2.50</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Coffee</span>
+                <span class="item-price">$3.00</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Focus Drink</span>
+                <span class="item-price">$62.00</span>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
