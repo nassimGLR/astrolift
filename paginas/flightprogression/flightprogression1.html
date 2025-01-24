@@ -10,6 +10,29 @@
     <script src="/scripts/navbar.js"></script>
 </head>
 <body>
+    <style>
+        .raket {
+            width: 10%;
+            position: fixed;
+            top: 50%;
+            left: 55%;
+            transform: rotate(30deg);
+        }
+        .aarde {
+            width: 50%;
+            position: fixed;
+            top: 60%;
+            left: 0%;
+            z-index: -5;
+        }
+        .mars {
+            width: 50%;
+            position: fixed;
+            top: -20%;
+            left: 80%;
+            z-index: -5; 
+        }
+    </style>
     <div include-html="/paginas/sidebar.html"></div>
     <!-- zet alles voor deze pagina hier onder -->
     <style>
@@ -27,5 +50,8 @@
         }
         
     </style>
+    <img src="./../../images/flightprogression/rocket.gif" alt="" class="raket">
+    <img src="./../../images/flightprogression/earth2.png" alt="" class="aarde">
+    <img src="./../../images/flightprogression/mars.png" alt="" class="mars">
 </body>
 </html>
