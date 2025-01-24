@@ -8,7 +8,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-image: url('/images/space.gif');
+    background-image: url('/paginas/muziek/images_music/space.gif');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -147,13 +147,14 @@ body {
     
     <!-- Left Panel -->
     <div class="left-panel">
-        <div class="back-btn">BACK</div>
+        <button class="back-btn" onclick="window.location.href=''">BACK</button>
+        </div>
         <div class="songs">
             <h2>SONGS</h2>
             <div class="search">🔍</div>
-            <div class="album" data-album="igor"><img src="" alt="IGOR"></div>
-            <div class="album" data-album="damn"><img src="/images/DAMN_ALBUM.jpg" alt="DAMN"></div>
-            <div class="album" data-album="gkmc"><img src="/images/gkmc_album.jpg" alt="goodkid"></div>
+            <div class="album" data-album="igor"><img src="/paginas/muziek/images_music/IGOR_ALBUM.jpg" alt="IGOR"></div>
+            <div class="album" data-album="damn"><img src="/paginas/muziek/images_music/DAMN_ALBUM.jpg" alt="DAMN"></div>
+            <div class="album" data-album="gkmc"><img src="/paginas/muziek/images_music/gkmc_album.jpg" alt="goodkid"></div>
         </div>
     </div>
 
@@ -177,20 +178,20 @@ body {
         // Album info
         const albums = {
             igor: {
-                vinylSrc: "/images/igor_vinyl.png",
-                song: "/images/gone.mp3",
+                vinylSrc: "/paginas/muziek/images_music/igor_vinyl.png",
+                song: "/paginas/muziek/images_music/gone.mp3",
                 title: "GONE, GONE / THANK YOU",
                 artist: "Tyler, The Creator"
             },
             damn: {
-                vinylSrc: "/images/damn_vinyl.png",
-                song: "/images/FEEL.mp3",
+                vinylSrc: "/paginas/muziek/images_music/damn_vinyl.png",
+                song: "/paginas/muziek/images_music/FEEL.mp3",
                 title: "FEEL.",
                 artist: "Kendrick Lamar"
             },
             gkmc: {
-                vinylSrc: "/images/madcity.png",
-                song: "/images/vibe.mp3",
+                vinylSrc: "/paginas/muziek/images_music/madcity.png",
+                song: "/paginas/muziek/images_music/vibe.mp3",
                 title: "bitch, don`t kill my vibe",
                 artist: "Kendrick Lamar"
             }
