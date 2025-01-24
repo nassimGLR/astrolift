@@ -30,17 +30,31 @@
         .cell:hover { background: #bdc3c7; }
         .cell.taken { cursor: not-allowed; }
         .message { margin-top: 20px; font-size: 1.5em; font-weight: bold; color: #e74c3c; }
+        .redo-btn { 
+            margin-top: 20px; 
+            padding: 10px 20px; 
+            background-color: #f1c40f; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer;
+        }
+        .redo-btn:hover { background-color: #f39c12; }
     </style>
 </head>
 <body>
     <h1>Tic-Tac-Toe</h1>
     <div class="board" id="board"></div>
     <p class="message" id="message"></p>
+    <button class="redo-btn" id="redo-btn">Redo</button>
+    
     <script>
         const board = document.getElementById("board");
         const message = document.getElementById("message");
+        const redoButton = document.getElementById("redo-btn");
         let cells = ["", "", "", "", "", "", "", "", ""];
         let player = "X";
+        let gameOver = false;
 
         function renderBoard() {
             board.innerHTML = "";
@@ -49,6 +63,8 @@
                 div.classList.add("cell");
                 if (cell !== "") div.classList.add("taken");
                 div.textContent = cell;
+                if (cell === "X") div.style.color = "darkblue";
+                if (cell === "O") div.style.color = "red";
                 div.addEventListener("click", () => playerMove(index));
                 board.appendChild(div);
             });
@@ -110,15 +126,27 @@
                 let [a, b, c] = pattern;
                 if (cells[a] && cells[a] === cells[b] && cells[a] === cells[c]) {
                     message.textContent = `player ${cells[a]} wins`;
+                    gameOver = true;
                     return true;
                 }
             }
             if (!cells.includes("")) {
                 message.textContent = "tie";
+                gameOver = true;
                 return true;
             }
             return false;
         }
+
+        function resetGame() {
+            cells = ["", "", "", "", "", "", "", "", ""];
+            player = "X";
+            gameOver = false;
+            message.textContent = "";
+            renderBoard();
+        }
+
+        redoButton.addEventListener("click", resetGame);
 
         renderBoard();
     </script>
