@@ -82,7 +82,7 @@ body {
 }
 
 .vinyl-img {
-    width: 600px;
+    width: 500px;
     height: 600px;
     border-radius: 50%;
     cursor: pointer;
@@ -147,8 +147,12 @@ body {
     
     <!-- Left Panel -->
     <div class="left-panel">
-        <button class="back-btn" onclick="window.location.href=''">BACK</button>
-        </div>
+        <div <button class="back-btn" id="back-button">&larr; Back</button>
+            <script type="text/javascript">
+                document.getElementById("back-button").onclick = function () {
+                    location.href = "./../menu/index.html";
+                };
+            </script></div>
         <div class="songs">
             <h2>SONGS</h2>
             <div class="search">🔍</div>
@@ -166,7 +170,7 @@ body {
             <div class="song-title" id="song-title">GONE, GONE / THANK YOU</div>
             <div class="artist" id="artist">Tyler, The Creator</div>
         </div>
-        <button class="add-btn">+</button>
+        
     </div>
 
     <script>
@@ -192,7 +196,7 @@ body {
             gkmc: {
                 vinylSrc: "/paginas/muziek/images_music/madcity.png",
                 song: "/paginas/muziek/images_music/vibe.mp3",
-                title: "bitch, don`t kill my vibe",
+                title: "Money Trees",
                 artist: "Kendrick Lamar"
             }
         };

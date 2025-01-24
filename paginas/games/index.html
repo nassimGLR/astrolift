@@ -11,30 +11,28 @@
 <body>
     <div include-html="/paginas/sidebar.html"></div>
     <!--- zet alles hieronder voor html-->
-    <div class="container">
-        <div class="button-container">
-            <button class="image-button" onclick="loadGame('/games/playgames/sonic3.html')">
-                <img src="/images/sonicrunners.png" alt="sonic">
-            </button>
-            <p class="title">Sonic runners</p>
+    <!DOCTYPE html>
+    <html lang="nl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Astro Games</title>
+        <style>
+            body { text-align: center; font-family: Arial, sans-serif; background-color: #3448b0; color: white; }
+            h1 { color: #ffffff; font-size: 3em; margin-bottom: 20px; }
+            .container { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 80vh; }
+            .buttons { display: flex; gap: 20px; }
+            .buttons img { width: 150px; cursor: pointer; border-radius: 10px; transition: transform 0.3s, box-shadow 0.3s; }
+            .buttons img:hover { transform: scale(1.1); box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8); }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Astro Games</h1>
+            <div class="buttons">
+                <a href="/paginas/games/playgames/tictactoee/tictactoe.html src="/images/tictactoe.png" alt="tic tac toe"></a>
+            </div>
         </div>
+    </body>
+    </html>
     
-        <div class="button-container">
-            <button class="image-button" onclick="loadGame('/games/playgames/pacman)">
-                <img src="/images/ssbu.jpg" alt="pacman">
-            </button>
-            <p class="title">pacman</p>
-        </div>
-    
-        <div class="button-container">
-            <button class="image-button" onclick="loadGame('/games/playgames/Breakout')">
-                <img src="/images/fortnite.webp" alt="Breakout">
-            </button>
-            <p class="title">Breakout</p>
-        </div>
-    </div>
-    
-
-    <script src="favgame.js"></script>
-</body>
-</html>
