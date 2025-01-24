@@ -3,126 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music</title>
-    <script src="/scripts/include-html.js"></script>
-    <script src="/scripts/navbar.js"></script>
-</head>
-<body>
-    <div include-html="/paginas/sidebar.html"></div>
-    <!-- zet alles voor deze pagina hier onder -->
-    <div class="button-container">
-        <button class="image-button" onclick="loadGame('games/smash.html')">
-            <img src="/images/ssbu.jpg" alt="smash">
-        </button>
-        <p class="title">Super Smash Bros Ultimate</p>
-    </div>
-
-    <div class="button-container">
-        <button class="image-button" onclick="loadGame('games/fortnite.html')">
-            <img src="/images/fortnite.webp" alt="fortnite">
-        </button>
-        <p class="title">Fortnite</p>
-    </div>
-</div>
-    
-    
+    <title>Astrotune</title>
     <style>
-        body {
-            text-align: center;
-            font-family: Arial, sans-serif;
-            background-color: #222;
-            color: white;
-        }
-        .player {
-            margin-top: 50px;
-            position: relative;
-        }
-        .disk {
-            width: 150px;
-            height: 150px;
-            background: url('disk.png') no-repeat center/cover;
-            border-radius: 50%;
-            margin: auto;
-            transition: transform 0.1s linear;
-        }
-        .controls {
-            margin-top: 20px;
-        }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('/images/space.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    height: 100vh;
+}
 
+/* Left Panel */
+.left-panel {
+    width: 10%;
+    background-color: #111;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    height: 900px;
+}
 
-        .button-container {
+.back-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid white;
+    color: ghostwhite;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.songs {
+    width: 50%;
+    color: ghostwhite;
+}
+
+.songs h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.search {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.album {
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.album img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Right Panel */
+.right-panel {
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    position: relative;
 }
-
-.image-button {
-    width: 180px;
-    height: 180px;
-    padding: 0;
-    border: 3px solid white;
-    background: none;
-    cursor: pointer;
-    border-radius: 10px;
-    transition: transform 0.2s, box-shadow 0.3s;
-}
-
-.image-button img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.image-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.6);
-}
-
 
 .title {
-    margin-top: 10px;
-    font-size: 18px;
+    font-size: 50px;
     font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    margin-bottom: 20px;
+    padding: 10px;
+    color: white;
+    display: inline-block;
 }
 
-.container1 {
+.vinyl-img {
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 1s linear;
+}
+
+.spin {
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Song Info */
+.song-info {
+    text-align: center;
+    padding: 20px;
+    border: 2px solid black;
+    display: inline-block;
+    width: 400px;
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.song-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: black;
+}
+
+.artist {
+    font-size: 16px;
+    color: gray;
+}
+
+/* Add Button */
+.add-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #d1a1d1;
+    color: #000;
+    font-size: 24px;
+    border: none;
+    border-radius: 50%;
     display: flex;
-    width: 100%;
-    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
     </style>
 </head>
 <body>
-    <h1>Music Player</h1>
-    <div class="player">
-        <div class="disk" id="disk"></div>
-        <audio id="audio" src="song.mp3"></audio>
+
+    <audio id="audio" src="/images/gone.mp3"></audio>
+    
+    <!-- Left Panel -->
+    <div class="left-panel">
+        <div class="back-btn">BACK</div>
+        <div class="songs">
+            <h2>SONGS</h2>
+            <div class="search">🔍</div>
+            <div class="album" data-album="igor"><img src="" alt="IGOR"></div>
+            <div class="album" data-album="damn"><img src="/images/DAMN_ALBUM.jpg" alt="DAMN"></div>
+            <div class="album" data-album="gkmc"><img src="/images/gkmc_album.jpg" alt="goodkid"></div>
+        </div>
     </div>
-    <div class="controls">
-        <button onclick="playMusic()">Play</button>
-        <button onclick="pauseMusic()">Pause</button>
+
+    <!-- Right Panel -->
+    <div class="right-panel">
+        <div class="title">ASTROTUNE ☆</div>
+        <img src="/images/igor_vinyl.png" alt="Vinyl Disk" class="vinyl-img" id="vinyl">
+        <div class="song-info">
+            <div class="song-title" id="song-title">GONE, GONE / THANK YOU</div>
+            <div class="artist" id="artist">Tyler, The Creator</div>
+        </div>
+        <button class="add-btn">+</button>
     </div>
+
     <script>
-        let audio = document.getElementById("audio");
-        let disk = document.getElementById("disk");
-        let rotation = 0;
-        let spinning;
+        const vinyl = document.getElementById("vinyl");
+        const audio = document.getElementById("audio");
+        const songTitle = document.getElementById("song-title");
+        const artistName = document.getElementById("artist");
 
-        function playMusic() {
-            audio.play();
-            spinning = setInterval(() => {
-                rotation += 2;
-                disk.style.transform = `rotate(${rotation}deg)`;
-            }, 50);
-        }
+        // Album info
+        const albums = {
+            igor: {
+                vinylSrc: "/images/igor_vinyl.png",
+                song: "/images/gone.mp3",
+                title: "GONE, GONE / THANK YOU",
+                artist: "Tyler, The Creator"
+            },
+            damn: {
+                vinylSrc: "/images/damn_vinyl.png",
+                song: "/images/FEEL.mp3",
+                title: "FEEL.",
+                artist: "Kendrick Lamar"
+            },
+            gkmc: {
+                vinylSrc: "/images/madcity.png",
+                song: "/images/vibe.mp3",
+                title: "bitch, don`t kill my vibe",
+                artist: "Kendrick Lamar"
+            }
+        };
 
-        function pauseMusic() {
-            audio.pause();
-            clearInterval(spinning);
-        }
+        // Vinyl draait bij klikken
+        vinyl.addEventListener("click", () => {
+            if (vinyl.classList.contains("spin")) {
+                vinyl.classList.remove("spin");
+                audio.pause();
+            } else {
+                vinyl.classList.add("spin");
+                audio.play();
+            }
+        });
+
+        // Wissel album bij klik op albumcover
+        document.querySelectorAll(".album").forEach(album => {
+            album.addEventListener("click", function () {
+                const selectedAlbum = albums[this.dataset.album];
+
+                if (selectedAlbum) {
+                    // Verander vinyl afbeelding
+                    vinyl.src = selectedAlbum.vinylSrc;
+                    // Verander song-info
+                    songTitle.textContent = selectedAlbum.title;
+                    artistName.textContent = selectedAlbum.artist;
+                    // Verander muziek
+                    audio.src = selectedAlbum.song;
+                    audio.pause();
+                    vinyl.classList.remove("spin");
+                }
+            });
+        });
     </script>
+
 </body>
 </html>
