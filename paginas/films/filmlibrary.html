@@ -3,12 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../../css/films/films1.css">
     <title>Films</title>
-    <script src="/scripts/include-html.js"></script>
-    <script src="/scripts/navbar.js"></script>
 </head>
 <body>
-    <div include-html="/paginas/sidebar.html"></div>
-    <!-- zet alles voor deze pagina hier onder -->
+    <button class="back-button" id="back-button">&larr; Back</button>
+    <script type="text/javascript">
+        document.getElementById("back-button").onclick = function () {
+            location.href = "./../menu/index.html";
+        };
+    </script>
+    <h1>Films</h1>
+    <div class="container">
+        <a href="movie1.html" class="poster">
+            <img src="./../../images/films/into_the_spider-verse.jpg" alt="Movie 1">
+        </a>
+        <a href="movie2.html" class="poster">
+            <img src="./../../images/films/spirited_away.jpg" alt="Movie 2">
+        </a>
+        <a href="movie3.html" class="poster">
+            <img src="./../../images/films/the_grinch.jpg" alt="Movie 3">
+        </a>
+        <a href="movie4.html" class="poster">
+            <img src="./../../images/films/nosferatu.jpg" alt="Movie 4">
+        </a>
+    </div>
 </body>
 </html>
