@@ -62,7 +62,7 @@ body {
     border-radius: 8px;
 }
 
-/* Right Panel */
+
 .right-panel {
     flex-grow: 1;
     display: flex;
@@ -98,7 +98,7 @@ body {
     to { transform: rotate(360deg); }
 }
 
-/* Song Info */
+
 .song-info {
     text-align: center;
     padding: 20px;
@@ -122,7 +122,7 @@ body {
     color: gray;
 }
 
-/* Add Button */
+
 .add-btn {
     position: absolute;
     top: 20px;
@@ -145,7 +145,7 @@ body {
 
     <audio id="audio" src="/images/gone.mp3"></audio>
     
-    <!-- Left Panel -->
+   
     <div class="left-panel">
         <div <button class="back-btn" id="back-button">&larr; Back</button>
             <script type="text/javascript">
@@ -162,7 +162,7 @@ body {
         </div>
     </div>
 
-    <!-- Right Panel -->
+  
     <div class="right-panel">
         <div class="title">ASTROTUNE ☆</div>
         <img src="/images/igor_vinyl.png" alt="Vinyl Disk" class="vinyl-img" id="vinyl">
@@ -201,7 +201,7 @@ body {
             }
         };
 
-        // Vinyl draait bij klikken
+       
         vinyl.addEventListener("click", () => {
             if (vinyl.classList.contains("spin")) {
                 vinyl.classList.remove("spin");
@@ -212,18 +212,18 @@ body {
             }
         });
 
-        // Wissel album bij klik op albumcover
+      
         document.querySelectorAll(".album").forEach(album => {
             album.addEventListener("click", function () {
                 const selectedAlbum = albums[this.dataset.album];
 
                 if (selectedAlbum) {
-                    // Verander vinyl afbeelding
+                    
                     vinyl.src = selectedAlbum.vinylSrc;
-                    // Verander song-info
+                    
                     songTitle.textContent = selectedAlbum.title;
                     artistName.textContent = selectedAlbum.artist;
-                    // Verander muziek
+                    
                     audio.src = selectedAlbum.song;
                     audio.pause();
                     vinyl.classList.remove("spin");
